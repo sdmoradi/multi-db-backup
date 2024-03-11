@@ -13,13 +13,13 @@ Before you begin, ensure that you have the following set up:
 1. Clone this repository to your local machine:
 
     ```
-    git clone https://github.com/your-username/database-backup-s3-docker.git
+    git clone https://github.com/sdmoradi/multi-db-backup.git
     ```
 
 2. Navigate to the cloned repository:
 
     ```
-    cd database-backup-s3-docker
+    cd multi-db-backup
     ```
 
 3. Open the `entrypoint.sh` file and update the environment variables with your database connection information and S3 bucket details:
