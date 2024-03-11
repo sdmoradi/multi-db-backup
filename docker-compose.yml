@@ -1,0 +1,20 @@
+version: '3'
+services:
+  backup:
+    image: database-backup-s3
+    environment:
+      - DATABASE_TYPE=""
+      - DATABASE_ADDRESS=""
+      - DATABASE_PORT=""
+      - DATABASE_USER=""
+      - DATABASE_PASS=""
+      - DATABASE_NAME=""
+      - S3_ADDRESS="s3.example.com"
+      - S3_PORT=443
+      - S3_SECRET=""
+      - S3_ACCESS=""
+      - S3_BUCKET=backups
+      - S3_PATH=/db-backups
+networks:
+  default:
+    name: database
