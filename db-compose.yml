@@ -2,7 +2,7 @@ version: '3'
 services:
 
   postgres:
-    image: docker-proxy.hasti.co/library/postgres:latest
+    image: postgres:latest
     restart: always
     environment:
       POSTGRES_USER: admin
@@ -11,7 +11,7 @@ services:
     ports:
       - 5432
   mongodb:
-    image: docker-proxy.hasti.co/library/mongo:latest
+    image: mongo:latest
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=adminpass
@@ -19,7 +19,7 @@ services:
     ports:
       - 27017
   mysql:
-    image: docker-proxy.hasti.co/library/mysql:latest
+    image: mysql:latest
     environment:
       - MYSQL_ROOT_PASSWORD=rootpass
       - MYSQL_DATABASE=dbname
@@ -29,4 +29,4 @@ services:
       - 3306
 networks:
   default:
-    name: db
+    name: database
