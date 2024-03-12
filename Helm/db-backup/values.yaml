@@ -1,0 +1,22 @@
+
+namespace: example
+# Database configuration
+database:
+  type: mysql #(mysql, mongodb, postgresql)
+  address: your-database-address
+  port: your-database-port
+  user: your-database-user
+  password: your-database-password
+  name: your-database-name
+
+# S3 storage configuration
+s3:
+  address: your-s3-address
+  port: your-s3-port
+  secret: your-s3-secret-key
+  access: your-s3-access-key
+  bucket: your-s3-bucket-name
+  path: your-s3-bucket-path
+
+# Backup schedule
+schedule: "0 0 * * *" # Daily backup at midnight (UTC time)

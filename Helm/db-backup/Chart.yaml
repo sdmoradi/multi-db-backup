@@ -1,0 +1,8 @@
+---
+apiVersion: v2
+name: db-backup
+description: A Helm chart for creating a CronJob backup of databases and save to s3
+version: 1.0.0
+maintainers:
+- name: Saeed Moradi
+  url: https://github.com/sdmoradi/multi-db-backup.git
