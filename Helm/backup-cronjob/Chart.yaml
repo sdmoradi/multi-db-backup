@@ -1,6 +1,6 @@
 ---
 apiVersion: v2
-name: db-backup
+name: backup-cronjob
 description: A Helm chart for creating a CronJob backup of databases and save to s3
 version: 1.0.0
 maintainers:
