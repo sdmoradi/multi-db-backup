@@ -2,10 +2,10 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: {{ include "database-backup.fullname" . }}
+  name: {{ .Values.jobname }}
   namespace: {{ .Values.namespace }}
   labels:
-    app: {{ include "database-backup.name" . }}
+    app: {{ .Values.jobname }}
 spec:
   concurrencyPolicy: Forbid
   failedJobsHistoryLimit: 1
@@ -14,7 +14,7 @@ spec:
       template:
         spec:
           containers:
-              image: sdmoradi/database-backup-s3:latest
+            - image: sdmoradi/database-backup-s3:latest
               env:
                 - name: DATABASE_TYPE
                   value: {{ .Values.database.type }}

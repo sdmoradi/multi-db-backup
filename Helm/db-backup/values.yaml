@@ -1,5 +1,5 @@
-
-namespace: example
+namespace: stage
+jobname: backup-example
 # Database configuration
 database:
   type: mysql #(mysql, mongodb, postgresql)
