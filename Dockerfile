@@ -3,12 +3,10 @@ FROM alpine:latest
 
 # Install necessary packages for database backups
 RUN apk update \
-    && apk --no-cache add mysql-client mariadb-connector-c mongodb-tools postgresql-client
+    && apk --no-cache add mysql-client mariadb-connector-c mongodb-tools postgresql-client tzdata
 
 # Set the time zone to Asia/Tehran
-RUN ln -sf /usr/share/zoneinfo/Asia/Tehran /etc/localtime
-RUN echo "Asia/Tehran" > /etc/timezone
-
+ENV TZ=Asia/Tehran
 # Install MinIO client (mc)
 
 RUN wget https://dl.min.io/client/mc/release/linux-amd64/mc && chmod +x mc && mv mc /usr/local/bin/mc
