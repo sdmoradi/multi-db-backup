@@ -15,31 +15,9 @@ spec:
         spec:
           containers:
             - image: sdmoradi/database-backup-s3:latest
-              env:
-                - name: DATABASE_TYPE
-                  value: {{ .Values.database.type }}
-                - name: DATABASE_ADDRESS
-                  value: {{ .Values.database.address }}
-                - name: DATABASE_PORT
-                  value: {{ .Values.database.port }}
-                - name: DATABASE_USER
-                  value: {{ .Values.database.user }}
-                - name: DATABASE_PASS
-                  value: {{ .Values.database.password }}
-                - name: DATABASE_NAME
-                  value: {{ .Values.database.name }}
-                - name: S3_ADDRESS
-                  value: {{ .Values.s3.address }}
-                - name: S3_PORT
-                  value: {{ .Values.s3.port }}
-                - name: S3_SECRET
-                  value: {{ .Values.s3.secret }}
-                - name: S3_ACCESS
-                  value: {{ .Values.s3.access }}
-                - name: S3_BUCKET
-                  value: {{ .Values.s3.bucket }}
-                - name: S3_PATH
-                  value: {{ .Values.s3.path }}
+              envFrom:
+                - secretRef:
+                    name: {{ .Values.jobname }}-secret
               imagePullPolicy: Always
               name: database-backup
               resources: {}
