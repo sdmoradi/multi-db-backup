@@ -19,4 +19,4 @@ s3:
   path: your-s3-bucket-path
 
 # Backup schedule
-schedule: "0 0 * * *" # Daily backup at midnight (UTC time)
+schedule: "0 0 * * *" # Daily backup at midnight (Asia/Tehran time)
