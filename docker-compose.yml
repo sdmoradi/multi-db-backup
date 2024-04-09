@@ -1,21 +1,22 @@
 version: '3'
 services:
   backup:
-    image: database-backup-s3
+    image: sdmoradi/database-backup-s3:latest
     environment:
-      - DATABASE_TYPE=""
-      - DATABASE_ADDRESS=""
-      - DATABASE_PORT=""
-      - DATABASE_USER=""
-      - DATABASE_PASS=""
-      - DATABASE_NAME=""
-      - S3_ADDRESS="s3.example.com"
+      - JOBNAME=backup-rocketchat
+      - DATABASE_TYPE=mongodb
+      - DATABASE_ADDRESS=ip
+      - DATABASE_PORT=27017
+      - DATABASE_USER=user
+      - DATABASE_PASS=password
+      - DATABASE_NAME=dbname
+      - S3_ADDRESS=s3address
       - S3_PORT=443
-      - S3_SECRET=""
-      - S3_ACCESS=""
+      - S3_SECRET=secret
+      - S3_ACCESS=access
       - S3_BUCKET=backups
-      - S3_PATH=/db-backups
-      - S3_LIFECYCLE="7"
+      - S3_PATH=db-backups
+      - S3_LIFECYCLE=7
 networks:
   default:
     name: database
