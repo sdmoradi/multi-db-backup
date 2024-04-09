@@ -32,6 +32,7 @@ ENV S3_SECRET=""
 ENV S3_ACCESS=""
 ENV S3_BUCKET=""
 ENV S3_PATH=""
+ENV S3_LIFECYCLE=""
 
 # Run the entrypoint script
 CMD /entrypoint.sh
