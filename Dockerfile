@@ -20,6 +20,7 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Set environment variables
+ENV JOBNAME=""
 ENV DATABASE_TYPE=""
 ENV DATABASE_ADDRESS=""
 ENV DATABASE_PORT=""

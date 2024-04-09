@@ -13,10 +13,10 @@ pg_dump -h $DATABASE_ADDRESS -p $DATABASE_PORT -U $DATABASE_USER -d $DATABASE_NA
 
 # Copy backups to S3-compatible storage using MinIO client (mc)
 mc alias set s3 https://$S3_ADDRESS:$S3_PORT $S3_ACCESS $S3_SECRET
-mc cp $BACKUP_FOLDER/$DATABASE_NAME-$(date +%Y%m%d%H).gz s3/$S3_BUCKET/$S3_PATH/
+mc cp $BACKUP_FOLDER/$DATABASE_NAME-$(date +%Y%m%d%H).gz s3/$S3_BUCKET/$S3_PATH/$JOBNAME/$DATABASE_TYPE/
 
 # Set lifecycle for object
-mc ilm rule add s3/$S3_BUCKET/$S3_PATH/$DATABASE_NAME-$(date +%Y%m%d%H).gz --expire-days $S3_LIFECYCLE
+mc ilm rule add s3/$S3_BUCKET/$S3_PATH/$JOBNAME/$DATABASE_TYPE/$DATABASE_NAME-$(date +%Y%m%d%H).gz --expire-days $S3_LIFECYCLE
 
 # Output success message
 echo "Backup completed and copied to S3 storage!"
