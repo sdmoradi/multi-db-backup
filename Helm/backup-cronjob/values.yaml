@@ -17,6 +17,7 @@ s3:
   access: your-s3-access-key
   bucket: your-s3-bucket-name
   path: your-s3-bucket-path
+  lifecycle: your-backup-expire-after-day
 
 # Backup schedule
 schedule: "0 0 * * *" # Daily backup at midnight (Asia/Tehran time)

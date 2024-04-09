@@ -23,12 +23,5 @@ case "$DATABASE_TYPE" in
     ;;
 esac
 
-# Copy backups to S3-compatible storage using MinIO client (mc)
-mc alias set s3 https://$S3_ADDRESS:$S3_PORT $S3_ACCESS $S3_SECRET
-mc cp --recursive /backup-scripts/backups/ s3/$S3_BUCKET/$S3_PATH
-
-# Output success message
-echo "Backup completed and copied to S3 storage!"
-
 # Exit the script
 exit 0

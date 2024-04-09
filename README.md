@@ -40,6 +40,7 @@ Before you begin, ensure that you have the following set up:
     S3_ACCESS=   # S3 access key
     S3_BUCKET=   # S3 bucket name
     S3_PATH=   # S3 bucket path
+    S3_LIFECYCLE=  # S3 backup objects life cycle 
     ```
 
 4. Customize the backup scripts located in the `backup-scripts` directory to suit your database backup requirements.

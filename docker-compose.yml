@@ -15,6 +15,7 @@ services:
       - S3_ACCESS=""
       - S3_BUCKET=backups
       - S3_PATH=/db-backups
+      - S3_LIFECYCLE="7"
 networks:
   default:
     name: database
